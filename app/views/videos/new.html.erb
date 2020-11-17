@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-center align-items-center container-fluid h-100 bg-light text-dark">
+  <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-10">
+    <%= form_for(@video) do |f| %>
+      <% if @video.errors.any? %>
+        <% @video.errors.full_messages.each do |message|%>
+        <h3><%= message %> </h3>
+        <%end%>
+      <%end%>
+      <div class="form-group row">
+        <label for="inputUrl" class="col-sm-2 col-form-label mr-5">Youtube URL</label>
+        <div class="col-sm-10">
+          <%= f.text_field :url, class: "form-control", placeholder: "Youtube URL", reuired: true %>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    <% end %>
+  </div>
+</div>

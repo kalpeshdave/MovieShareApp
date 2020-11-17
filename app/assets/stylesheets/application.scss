@@ -1,0 +1,23 @@
+@import "bootstrap/scss/bootstrap";
+
+body {
+  padding-top: 65px;
+}
+@media (max-width: 979px) {
+  body {
+    padding-top: 0px;
+  }
+}
+
+.video-fluid {
+  width: 40%;
+  height: auto;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.navbar .dropdown-menu .form-control {
+    width: 200px;
+}
