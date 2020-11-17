@@ -1,11 +1,7 @@
 class SessionsController < Devise::SessionsController
   def create
     resource = User.find_by(email: user_params[:email])
-    unless resource
-      create_params = user_params
-      create_params[:password_confirmation] = user_params[:password]
-      resource = User.create!(create_params)
-    end
+    resource = User.create!(user_params) unless resource
     self.resource = warden.authenticate!(auth_options)
     set_flash_message!(:notice, :signed_in)
     sign_in(resource_name, resource)
